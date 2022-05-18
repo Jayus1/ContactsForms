@@ -15,11 +15,31 @@ namespace WindForms_Contacts
         public ContactsDetails()
         {
             InitializeComponent();
+            _businessLogicLayer=new BusinessLogicLayer();
         }
+
+        private BusinessLogicLayer _businessLogicLayer;
+
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtFirstName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            Contact contact = new Contact();
+            contact.FirstName=txtFirstName.Text;
+            contact.LastName = txtLastName.Text;
+            contact.Phone = txtPhone.Text;
+            contact.Address = txtAddress.Text;
+
+            _businessLogicLayer.Save();
         }
     }
 }

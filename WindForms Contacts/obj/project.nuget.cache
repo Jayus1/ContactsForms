@@ -1,8 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "sew5np1mBGSUoMdQs3F5BQ9Wh9aO4SMuGBAfp9Jf6lXyZQjQ4jzN0iR1nC+E/whGpiOpvTR3fSiv3NInQhWVlw==",
+  "dgSpecHash": "BJYjjnuan4OQmh+Enc4o8iRuqkmnUwkX8c7YYSJB/zuNKjLfQ+WXAprTaFQrBBn0WCI+0pADS26bRaA0qcSRCQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\julio\\source\\repos\\WindForms Contacts\\WindForms Contacts\\WindForms Contacts.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Julio Sierra\\Source\\Repos\\Jayus1\\ContactsForms\\WindForms Contacts\\WindForms Contacts.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Julio Sierra\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\Julio Sierra\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
+    "C:\\Users\\Julio Sierra\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
+    "C:\\Users\\Julio Sierra\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Julio Sierra\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Julio Sierra\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Julio Sierra\\.nuget\\packages\\system.data.sqlclient\\4.8.3\\system.data.sqlclient.4.8.3.nupkg.sha512",
+    "C:\\Users\\Julio Sierra\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
+    "C:\\Users\\Julio Sierra\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }
