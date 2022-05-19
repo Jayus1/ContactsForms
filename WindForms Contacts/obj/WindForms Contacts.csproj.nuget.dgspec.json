@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Julio Sierra\\Source\\Repos\\Jayus1\\ContactsForms\\WindForms Contacts\\WindForms Contacts.csproj": {}
+    "C:\\Users\\Julio Sierra\\source\\repos\\Jayus1\\ContactsForms\\WindForms Contacts\\WindForms Contacts.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Julio Sierra\\Source\\Repos\\Jayus1\\ContactsForms\\WindForms Contacts\\WindForms Contacts.csproj": {
+    "C:\\Users\\Julio Sierra\\source\\repos\\Jayus1\\ContactsForms\\WindForms Contacts\\WindForms Contacts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Julio Sierra\\Source\\Repos\\Jayus1\\ContactsForms\\WindForms Contacts\\WindForms Contacts.csproj",
+        "projectUniqueName": "C:\\Users\\Julio Sierra\\source\\repos\\Jayus1\\ContactsForms\\WindForms Contacts\\WindForms Contacts.csproj",
         "projectName": "WindForms Contacts",
-        "projectPath": "C:\\Users\\Julio Sierra\\Source\\Repos\\Jayus1\\ContactsForms\\WindForms Contacts\\WindForms Contacts.csproj",
+        "projectPath": "C:\\Users\\Julio Sierra\\source\\repos\\Jayus1\\ContactsForms\\WindForms Contacts\\WindForms Contacts.csproj",
         "packagesPath": "C:\\Users\\Julio Sierra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Julio Sierra\\Source\\Repos\\Jayus1\\ContactsForms\\WindForms Contacts\\obj\\",
+        "outputPath": "C:\\Users\\Julio Sierra\\source\\repos\\Jayus1\\ContactsForms\\WindForms Contacts\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Julio Sierra\\AppData\\Roaming\\NuGet\\NuGet.Config",
