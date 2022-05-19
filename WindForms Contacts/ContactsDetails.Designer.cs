@@ -57,6 +57,7 @@
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(241, 29);
             this.txtFirstName.TabIndex = 1;
+            this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
             // 
             // txtLastName
             // 
@@ -121,6 +122,7 @@
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -150,6 +152,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ContactsDetails";
             this.Text = "ContactsDetails";
+            this.Load += new System.EventHandler(this.ContactsDetails_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
