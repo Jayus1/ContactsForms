@@ -33,13 +33,22 @@ namespace WindForms_Contacts
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            
+        }
+         public void SaveContact()
+        {
             Contact contact = new Contact();
-            contact.FirstName=txtFirstName.Text;
+            contact.FirstName = txtFirstName.Text;
             contact.LastName = txtLastName.Text;
             contact.Phone = txtPhone.Text;
             contact.Address = txtAddress.Text;
 
-            _businessLogicLayer.Save();
+            _businessLogicLayer.SaveContact(contact);
+        }
+
+        private void ContactsDetails_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

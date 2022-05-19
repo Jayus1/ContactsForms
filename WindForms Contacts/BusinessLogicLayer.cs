@@ -16,9 +16,14 @@ namespace WindForms_Contacts
         public Contact SaveContact(Contact contact)
         {
             if (contact.Id == 0)
-                _dataAccessLayer.InsertContact();
+                _dataAccessLayer.InsertContact(contact);
             else
-                _dataAccessLayer.UpdateContact();
+                _dataAccessLayer.UpdateContact(contact);
+            return contact
+        }
+        private List<Contact> GetContacts()
+        {
+
         }
     }
 }

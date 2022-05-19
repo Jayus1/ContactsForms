@@ -9,7 +9,7 @@ namespace WindForms_Contacts
 {
     public class DataAccessLayer
     {
-        private SqlConnection conn= new SqlConnection();
+        private SqlConnection conn= new SqlConnection("Data Source=DESKTOP-0SC2BM1;Initial Catalog=Contacts;Integrated Security=True");
 
         public void InsertContact(Contact contact)
         {
@@ -43,6 +43,36 @@ namespace WindForms_Contacts
             finally
             {
                 conn.Close();
+            }
+
+            public List<Contact> GetContacts()
+            {
+                List<Contact> contacts = new List<Contact>();
+                try
+                {
+                    string query = @"SELECT * FROM Contacts";
+                    SqlCommand command= new SqlCommand(query, conn);
+
+                    SqlDataReader reader= command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                       contacts.Add(new Contact
+                       {
+                           Id=
+                           FirstName = reader.GetString(0),
+                           LastName = reader.GetString(1),
+                           Phone = reader.GetString(2),
+                           Address = reader.GetString(3),
+
+                       }
+                      )
+                    }
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
             }
         }
     }

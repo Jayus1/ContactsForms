@@ -152,6 +152,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ContactsDetails";
             this.Text = "ContactsDetails";
+            this.Load += new System.EventHandler(this.ContactsDetails_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
