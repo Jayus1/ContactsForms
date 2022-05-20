@@ -12,6 +12,7 @@ namespace WindForms_Contacts
         private void Form1_Load(object sender, EventArgs e)
         {
             ShowContats();
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -23,12 +24,13 @@ namespace WindForms_Contacts
 
         private void ShowAdd()
         {
-            new ContactsDetails().ShowDialog();
+            new ContactsDetails().ShowDialog(this);
         }
 
-        private void ShowContats()
+        public void ShowContats()
         {
-            List<Contact> contacts = _businessLogicLayer
+            List<Contact> contacts = _businessLogicLayer.GetContacts();
+            gridContacts.DataSource = contacts;
         }
 
         #endregion
@@ -36,6 +38,16 @@ namespace WindForms_Contacts
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void gridContacts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewLinkCell cell = (DataGridViewLinkCell)gridContacts.Rows[e.RowIndex].Cells[e.ColumnIndex];
+
+            if (cell.Value.ToString() == "Edit")
+            {
+                ContactsDetails contactDetails= new ContactsDetails()
+            }
         }
     }
 }

@@ -56,16 +56,15 @@ namespace WindForms_Contacts
                     SqlDataReader reader= command.ExecuteReader();
                     while (reader.Read())
                     {
-                       contacts.Add(new Contact
-                       {
-                           Id=
-                           FirstName = reader.GetString(0),
-                           LastName = reader.GetString(1),
-                           Phone = reader.GetString(2),
-                           Address = reader.GetString(3),
+                        contacts.Add(new Contact
+                        {
+                            Id = int.Parse(reader["Id"].ToString())
+                            FirstName = reader["FirstName"].ToString(),
+                            LastName = reader["LastName"].ToString(),
+                            Phone = reader["Phone"].ToString(),
+                            Address = reader["Address"].ToString(),
 
-                       }
-                      )
+                        });
                     }
                 }
                 catch (Exception)
@@ -73,6 +72,11 @@ namespace WindForms_Contacts
 
                     throw;
                 }
+                finally
+                {
+                    conn.Close();
+                }
+                return contacts;
             }
         }
     }

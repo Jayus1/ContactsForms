@@ -19,7 +19,7 @@ namespace WindForms_Contacts
         }
 
         private BusinessLogicLayer _businessLogicLayer;
-
+        private Contact _contact;
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -33,7 +33,9 @@ namespace WindForms_Contacts
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            
+            SaveContact();
+            this.Close();
+            ((Form1)this.Owner).ShowContats();
         }
          public void SaveContact()
         {
@@ -44,6 +46,28 @@ namespace WindForms_Contacts
             contact.Address = txtAddress.Text;
 
             _businessLogicLayer.SaveContact(contact);
+
+
+        }
+
+        public void LoadContact(Contact contact)
+        {
+            _contact = contact;
+            if(contact != null)
+            {
+                txtFirstName.Text = contact.FirstName;
+                txtLastName.Text = contact.LastName;
+                txtPhone.Text=contact.Phone;
+                txtAddress.Text = contact.Address;
+            }
+        }
+
+        private void ClearForm()
+        {
+            txtFirstName.Text = string.Empty;
+            txtLastName.Text = string.Empty;
+            txtPhone.Text = string.Empty;
+            txtAddress.Text = string.Empty;
         }
 
         private void ContactsDetails_Load(object sender, EventArgs e)
