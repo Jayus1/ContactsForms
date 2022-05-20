@@ -45,6 +45,8 @@ namespace WindForms_Contacts
             contact.Phone = txtPhone.Text;
             contact.Address = txtAddress.Text;
 
+            contact.Id = _contact != null ? _contact.Id : 0;
+
             _businessLogicLayer.SaveContact(contact);
 
 
@@ -70,6 +72,27 @@ namespace WindForms_Contacts
             txtAddress.Text = string.Empty;
         }
 
+        public void LoadContact(Contact contact)
+        {
+            _contact = contact;
+            if (contact != null)
+            {
+                ClearForm();
+
+                txtFirstName.Text = contact.FirstName;
+                txtLastName.Text = contact.LastName;
+                txtPhone.Text = contact.Phone;
+                txtAddress.Text=contact.Address;
+            }
+        }
+
+        public void ClearForm()
+        {
+            txtFirstName.Text = String.Empty;
+            txtLastName.Text = String.Empty;
+            txtPhone.Text = String.Empty;
+            txtAddress.Text = String.Empty;
+        }
         private void ContactsDetails_Load(object sender, EventArgs e)
         {
 

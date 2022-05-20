@@ -28,16 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.contactsDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridContacts = new System.Windows.Forms.DataGridView();
+            this.dataGridContacts = new System.Windows.Forms.DataGridView();
             this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.contactsDetailsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridContacts)).BeginInit();
+            this.Delete = new System.Windows.Forms.DataGridViewLinkColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridContacts)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -79,21 +77,22 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // contactsDetailsBindingSource
+            // dataGridContacts
             // 
-            this.contactsDetailsBindingSource.DataSource = typeof(WindForms_Contacts.ContactsDetails);
-            // 
-            // gridContacts
-            // 
-            this.gridContacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridContacts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Edit});
-            this.gridContacts.Location = new System.Drawing.Point(12, 53);
-            this.gridContacts.Name = "gridContacts";
-            this.gridContacts.RowTemplate.Height = 25;
-            this.gridContacts.Size = new System.Drawing.Size(776, 385);
-            this.gridContacts.TabIndex = 5;
-            this.gridContacts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridContacts_CellContentClick);
+            this.dataGridContacts.AllowUserToAddRows = false;
+            this.dataGridContacts.AllowUserToDeleteRows = false;
+            this.dataGridContacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridContacts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Edit,
+            this.Delete});
+            this.dataGridContacts.Location = new System.Drawing.Point(12, 53);
+            this.dataGridContacts.Name = "dataGridContacts";
+            this.dataGridContacts.ReadOnly = true;
+            this.dataGridContacts.RowTemplate.Height = 25;
+            this.dataGridContacts.Size = new System.Drawing.Size(776, 386);
+            this.dataGridContacts.TabIndex = 5;
+            this.dataGridContacts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridContacts.Click += new System.EventHandler(this.dataGridContacts_Click);
             // 
             // Edit
             // 
@@ -103,12 +102,20 @@
             this.Edit.Text = "Edit";
             this.Edit.UseColumnTextForLinkValue = true;
             // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForLinkValue = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.gridContacts);
+            this.Controls.Add(this.dataGridContacts);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
@@ -116,8 +123,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.contactsDetailsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridContacts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridContacts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,8 +134,8 @@
         private TextBox txtSearch;
         private Button btnSearch;
         private Button btnAdd;
-        private BindingSource contactsDetailsBindingSource;
-        private DataGridView gridContacts;
+        private DataGridView dataGridContacts;
         private DataGridViewLinkColumn Edit;
+        private DataGridViewLinkColumn Delete;
     }
 }

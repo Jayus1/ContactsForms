@@ -18,12 +18,16 @@ namespace WindForms_Contacts
             if (contact.Id == 0)
                 _dataAccessLayer.InsertContact(contact);
             else
-                // _dataAccessLayer.UpdateContact(contact);
-                return contact;
+               _dataAccessLayer.UpdateContact(contact);
+            return contact;
         }
         public List<Contact> GetContacts()
         {
-            return _dataAccessLayer.GetContacts();
+           return _dataAccessLayer.GetContacts();
+        }
+        public void DeleteContacts(int id)
+        {
+            _dataAccessLayer.DeleteContact(id);
         }
     }
 }

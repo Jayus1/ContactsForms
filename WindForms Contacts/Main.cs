@@ -12,7 +12,6 @@ namespace WindForms_Contacts
         private void Form1_Load(object sender, EventArgs e)
         {
             ShowContats();
-
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -30,24 +29,43 @@ namespace WindForms_Contacts
         public void ShowContats()
         {
             List<Contact> contacts = _businessLogicLayer.GetContacts();
-            gridContacts.DataSource = contacts;
+            dataGridContacts.DataSource = contacts;
         }
 
         #endregion
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-        }
-
-        private void gridContacts_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewLinkCell cell = (DataGridViewLinkCell)gridContacts.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            DataGridViewLinkCell cell = (DataGridViewLinkCell)dataGridContacts.Rows[e.RowIndex].Cells[e.ColumnIndex];
 
             if (cell.Value.ToString() == "Edit")
             {
-                ContactsDetails contactDetails= new ContactsDetails()
+                ContactsDetails contactsDetails = new ContactsDetails();
+                contactsDetails.LoadContact(new Contact
+                {
+                    Id =int.Parse(dataGridContacts.Rows[e.RowIndex].Cells[0].Value.ToString()),
+                    FirstName= dataGridContacts.Rows[e.RowIndex].Cells[1].Value.ToString(),
+                    LastName= dataGridContacts.Rows[e.RowIndex].Cells[2].Value.ToString(),
+                    Phone = dataGridContacts.Rows[e.RowIndex].Cells[3].Value.ToString(),
+                    Address = dataGridContacts.Rows[e.RowIndex].Cells[4].Value.ToString(),
+                });
+                contactsDetails.ShowDialog(this);
             }
+            else if(cell.Value.ToString() == "Delete")
+            {
+                DeleteContacts(int.Parse(dataGridContacts.Rows[e.RowIndex].Cells[0].Value.ToString()));
+                ShowContats();
+            }
+        }
+
+        private void DeleteContacts(int id)
+        {
+            _businessLogicLayer.DeleteContacts(id);
+        }
+
+        private void dataGridContacts_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
