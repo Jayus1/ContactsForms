@@ -52,17 +52,7 @@ namespace WindForms_Contacts
 
         }
 
-        public void LoadContact(Contact contact)
-        {
-            _contact = contact;
-            if(contact != null)
-            {
-                txtFirstName.Text = contact.FirstName;
-                txtLastName.Text = contact.LastName;
-                txtPhone.Text=contact.Phone;
-                txtAddress.Text = contact.Address;
-            }
-        }
+        
 
         private void ClearForm()
         {
@@ -86,13 +76,6 @@ namespace WindForms_Contacts
             }
         }
 
-        public void ClearForm()
-        {
-            txtFirstName.Text = String.Empty;
-            txtLastName.Text = String.Empty;
-            txtPhone.Text = String.Empty;
-            txtAddress.Text = String.Empty;
-        }
         private void ContactsDetails_Load(object sender, EventArgs e)
         {
 

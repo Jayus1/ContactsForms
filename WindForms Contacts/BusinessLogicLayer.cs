@@ -21,9 +21,9 @@ namespace WindForms_Contacts
                _dataAccessLayer.UpdateContact(contact);
             return contact;
         }
-        public List<Contact> GetContacts()
+        public List<Contact> GetContacts(string searchText= null)
         {
-           return _dataAccessLayer.GetContacts();
+           return _dataAccessLayer.GetContacts(searchText);
         }
         public void DeleteContacts(int id)
         {

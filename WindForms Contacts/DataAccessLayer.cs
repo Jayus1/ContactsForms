@@ -45,25 +45,35 @@ namespace WindForms_Contacts
                 conn.Close();
             }
         }
-        public List<Contact> GetContacts()
+
+        public List<Contact> GetContacts(string search = null)
         {
             List<Contact> contacts = new List<Contact>();
             try
             {
                 conn.Open();
-                string query = @"SELECT * FROM Contacts";
-                SqlCommand command = new SqlCommand(query, conn);
+                string query = @"SELECT Id, FirstName, LastName, Phone, Address FROM Contacts";
+                SqlCommand command = new SqlCommand();
+                if (!string.IsNullOrEmpty(search))
+                {
+                    query += @"WHERE FirstName LIKE @Search OR LastName LIKe @Search OR Phone LIKE @Search OR Address LIKe @Search";
+                    command.Parameters.Add(new SqlParameter("@Search", $"%{search}%"));
+                }
 
+                command.CommandText=query;
+                command.Connection = conn;
+                        
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
                     contacts.Add(new Contact
                     {
-                        Id = int.Parse(reader["Id"].ToString(),
-                        FirstName = reader["FirstName"].ToString(),
-                        LastName = reader["LastName"].ToString(),
-                        Phone = reader["Phone"].ToString(),
-                        Address = reader["Address"].ToString()});
+                        Id=int.Parse(reader["Id"].ToString()),
+                        FirstName=reader["FirstName"].ToString(),
+                        LastName=reader["LastName"].ToString(),
+                        Phone=reader["Phone"].ToString(),
+                        Address=reader["Address"].ToString()
+                    });
                 }
             }
             catch (Exception)
