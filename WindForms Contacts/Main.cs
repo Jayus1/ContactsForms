@@ -23,19 +23,39 @@ namespace WindForms_Contacts
 
         private void ShowAdd()
         {
-            new ContactsDetails().ShowDialog();
+            new ContactsDetails().ShowDialog(this);
         }
 
-        private void ShowContats()
+        public void ShowContats()
         {
-            List<Contact> contacts = _businessLogicLayer
+            List<Contact> contacts = _businessLogicLayer.GetContacts();
+            dataGridContacts.DataSource = contacts;
         }
 
         #endregion
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            DataGridViewLinkCell cell = (DataGridViewLinkCell)dataGridContacts.Rows[e.RowIndex].Cells[e.ColumnIndex];
 
+            if (cell.Value.ToString() == "Edit")
+            {
+                ContactsDetails contactsDetails = new ContactsDetails();
+                contactsDetails.LoadContact(new Contact
+                {
+                    Id =int.Parse(dataGridContacts.Rows[e.RowIndex].Cells[0].Value.ToString()),
+                    FirstName= dataGridContacts.Rows[e.RowIndex].Cells[1].Value.ToString(),
+                    LastName= dataGridContacts.Rows[e.RowIndex].Cells[2].Value.ToString(),
+                    Phone = dataGridContacts.Rows[e.RowIndex].Cells[3].Value.ToString(),
+                    Address = dataGridContacts.Rows[e.RowIndex].Cells[4].Value.ToString()
+                });
+                contactsDetails.ShowDialog(this);
+            }
+        }
+
+        private void dataGridContacts_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
