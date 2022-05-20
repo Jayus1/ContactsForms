@@ -18,7 +18,7 @@ namespace WindForms_Contacts
             if (contact.Id == 0)
                 _dataAccessLayer.InsertContact(contact);
             else
-                _dataAccessLayer.UpdateContact(contact);
+               // _dataAccessLayer.UpdateContact(contact);
             return contact
         }
         private List<Contact> GetContacts()
