@@ -47,10 +47,20 @@ namespace WindForms_Contacts
                     FirstName= dataGridContacts.Rows[e.RowIndex].Cells[1].Value.ToString(),
                     LastName= dataGridContacts.Rows[e.RowIndex].Cells[2].Value.ToString(),
                     Phone = dataGridContacts.Rows[e.RowIndex].Cells[3].Value.ToString(),
-                    Address = dataGridContacts.Rows[e.RowIndex].Cells[4].Value.ToString()
+                    Address = dataGridContacts.Rows[e.RowIndex].Cells[4].Value.ToString(),
                 });
                 contactsDetails.ShowDialog(this);
             }
+            else if(cell.Value.ToString() == "Delete")
+            {
+                DeleteContacts(int.Parse(dataGridContacts.Rows[e.RowIndex].Cells[0].Value.ToString()));
+                ShowContats();
+            }
+        }
+
+        private void DeleteContacts(int id)
+        {
+            _businessLogicLayer.DeleteContacts(id);
         }
 
         private void dataGridContacts_Click(object sender, EventArgs e)

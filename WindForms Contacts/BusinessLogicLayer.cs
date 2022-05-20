@@ -25,5 +25,9 @@ namespace WindForms_Contacts
         {
            return _dataAccessLayer.GetContacts();
         }
+        public void DeleteContacts(int id)
+        {
+            _dataAccessLayer.DeleteContact(id);
+        }
     }
 }

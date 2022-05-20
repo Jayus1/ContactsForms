@@ -63,9 +63,7 @@ namespace WindForms_Contacts
                         FirstName = reader["FirstName"].ToString(),
                         LastName = reader["LastName"].ToString(),
                         Phone = reader["Phone"].ToString(),
-                        Address = reader["Address"].ToString()
-
-                     });
+                        Address = reader["Address"].ToString()});
                 }
             }
             catch (Exception)
@@ -101,6 +99,29 @@ namespace WindForms_Contacts
                 command.Parameters.Add(lastName);
                 command.Parameters.Add(phone);
                 command.Parameters.Add(address);
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public void DeleteContact(int id)
+        {
+            try
+            {
+                conn.Open();
+                string query = @"DELETE FROM Contacts WHERE Id= @Id";
+
+                SqlCommand command = new SqlCommand(query, conn);
+                command.Parameters.Add(new SqlParameter("Id", id));
 
                 command.ExecuteNonQuery();
             }

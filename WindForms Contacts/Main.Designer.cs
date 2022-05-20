@@ -34,6 +34,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.dataGridContacts = new System.Windows.Forms.DataGridView();
             this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridContacts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,7 +83,8 @@
             this.dataGridContacts.AllowUserToDeleteRows = false;
             this.dataGridContacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridContacts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Edit});
+            this.Edit,
+            this.Delete});
             this.dataGridContacts.Location = new System.Drawing.Point(12, 53);
             this.dataGridContacts.Name = "dataGridContacts";
             this.dataGridContacts.ReadOnly = true;
@@ -97,7 +99,16 @@
             this.Edit.HeaderText = "Edit";
             this.Edit.Name = "Edit";
             this.Edit.ReadOnly = true;
+            this.Edit.Text = "Edit";
             this.Edit.UseColumnTextForLinkValue = true;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForLinkValue = true;
             // 
             // Form1
             // 
@@ -125,5 +136,6 @@
         private Button btnAdd;
         private DataGridView dataGridContacts;
         private DataGridViewLinkColumn Edit;
+        private DataGridViewLinkColumn Delete;
     }
 }
