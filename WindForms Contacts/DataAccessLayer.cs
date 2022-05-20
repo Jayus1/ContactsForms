@@ -58,7 +58,7 @@ namespace WindForms_Contacts
                     {
                        contacts.Add(new Contact
                        {
-                           Id=
+                           Id=gitg
                            FirstName = reader.GetString(0),
                            LastName = reader.GetString(1),
                            Phone = reader.GetString(2),
